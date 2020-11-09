@@ -9,6 +9,22 @@
 </head>
 
 <body>
+  <h3>Placar</h3>
+  <table class="placar">
+    <tr>
+      <td>Jogador</td>
+      <td>Pontos</td>
+    </tr>
+    <tr id="1">
+      <td class="nome">Rayza</td>
+      <td class="pontos">0</td>
+    </tr>
+    <tr id="2">
+      <td class="nome">Vitor</td>
+      <td class="pontos">0</td>
+    </tr>
+  </table>
+
   <div id="jogo">
     <div class="linha">
       <div class="casa" id="casa1"></div>
@@ -26,13 +42,34 @@
       <div class="casa" id="casa9"></div>
     </div>
   </div>
-  <div class="currentPlayer">Vez do jogador <div id="currentPlayerImg"></div>
+
+  <div id="nomeJogadores">
+    <div>
+      <label>Jogador 1</label>
+      <input type="text" id="jogador-1" />
+    </div>
+
+    <div>
+      <label>Jogador 2</label>
+      <input type="text" id="jogador-2" />
+    </div>
+
+    <button class="btn-primary" onclick="iniciarJogo()" type="button">Iniciar</button>
   </div>
+
+  <button id="trocar-jogadores" onclick="trocarJogadores()" class="btn-primary d-none">
+    Trocar jogadores
+  </button>
+
+  <div class="currentPlayer text-large d-none">
+    Vez do jogador <div id="currentPlayerImg"></div>
+    <span id="nomeJogadorAtual"></span>
+  </div>
+
   <div id="restartGame" class="d-none">
-    <div id="resultado"></div>
-    <img src="assets/restart.png" alt="restartGame" onclick="window.location.reload(true)">
+    <div id="resultado" class="text-large"></div>
+    <img src="assets/restart.png" alt="restartGame" onclick="reiniciarJogo()">
   </div>
   <script src="./index.js"></script>
 </body>
-
 </html>
