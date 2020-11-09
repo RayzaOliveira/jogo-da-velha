@@ -1,2 +1,2 @@
-# jogo-da-velha
-Meu primeiro jogo utilizando JavaScript, Html e Css
+# Jogo da Velha
+Meu primeiro jogo utilizando JavaScript, HTML e CSS
