@@ -115,6 +115,23 @@ document.addEventListener("DOMContentLoaded", () => {
         casa.removeEventListener('click');
       })
       atualizarPlacar()
+    } else {
+      let casasCheias = 0
+      document.querySelectorAll('.casa').forEach(casa => {
+        const bg = casa.style.backgroundImage
+
+        if (bg !== "") {
+          casasCheias++
+        }
+      })
+
+      if (casasCheias === 9) {
+        document.getElementById("restartGame").classList.toggle('d-none');
+        document.getElementById("resultado").innerHTML = `👵🏻 Deu velha :(`;
+        document.querySelectorAll('casa').forEach(casa => {
+          casa.removeEventListener('click');
+        })
+      }
     }
   }
 
