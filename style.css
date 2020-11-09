@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  font-size: 2.5rem;
+  font-family: 'Raleway';
+}
+
+#jogo {
+  --borderWidth: 3px;
+  position: relative;
+  border-radius: 3px;
+}
+
+#jogo::after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedGradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+.linha {
+  height: 150px;
+  display: flex;
+  border-bottom: 2px dashed;
+}
+
+.linha:last-child {
+  border-bottom: none;
+}
+
+.casa {
+  width: 150px;
+  cursor: pointer;
+  position: relative;
+  background-size: contain;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-right: 2px dashed whitesmoke;
+}
+
+.casa:last-child {
+  border-right: none;
+}
+
+#resultado {
+  top: 64px;
+  position: absolute;
+}
+
+.currentPlayer {
+  bottom: 32px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+}
+
+#currentPlayerImg {
+  width: 90px;
+  height: 90px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#restartGame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#restartGame img {
+  cursor: pointer;
+}
+
+.d-none {
+  display: none !important;
+}
+
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
