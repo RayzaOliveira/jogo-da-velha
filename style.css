@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:200');
 * {
   margin: 0;
   padding: 0;
+  outline: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -14,7 +13,7 @@ body {
   justify-content: center;
   background-color: black;
   color: white;
-  font-family: 'Raleway';
+  font-family: 'Press Start 2P', cursive;
 }
 
 /* Css separado para nao colocar o font-size para todo o body */
@@ -25,27 +24,31 @@ body {
 #nomeJogadores {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  margin: 1rem auto;
+  align-items: center;
+  margin: 1rem 0;
 }
 
 #nomeJogadores > div {
-  margin: 0 0 0.75rem;
-  display: block;
-  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 #nomeJogadores > div > label {
-  font-size: 0.875rem;
+  font-size: 1.5rem;
 }
 
-#nomeJogadores input {
-  border-radius: 10px;
-  padding: 0.5rem 0.5rem;
+#nomeJogadores > div > input {
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
   width: 100%;
   max-width: 18rem;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
   font-size: 1rem;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
 }
 
 button.btn-primary {
@@ -57,8 +60,8 @@ button.btn-primary {
   border: solid 2px #FFF;
   background-color: transparent;
   cursor: pointer;
-  transition: 0.4s;
-  margin: 1.25rem auto 0;
+  transition: 0.3s;
+  margin-top: 1rem;
 }
 
 button.btn-primary:hover {
@@ -93,11 +96,6 @@ button.btn-primary:hover {
 .linha {
   height: 150px;
   display: flex;
-  border-bottom: 2px dashed;
-}
-
-.linha:last-child {
-  border-bottom: none;
 }
 
 .casa {
@@ -109,10 +107,15 @@ button.btn-primary:hover {
   background-repeat: no-repeat;
   background-position: center;
   border-right: 2px dashed whitesmoke;
+  border-bottom: 2px dashed whitesmoke;
 }
 
 .casa:last-child {
   border-right: none;
+}
+
+.linha:last-child .casa {
+  border-bottom: none;
 }
 
 #resultado {
@@ -140,7 +143,7 @@ button.btn-primary:hover {
   position: absolute;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
 }
 
 #restartGame img {
