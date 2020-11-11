@@ -45,7 +45,7 @@ O <strong>Space Squad</strong> é um programa de treinamento de mentores para a 
 
 Durante o curso foi proposto um desafio, que consistia em os alunos se dividirem em grupos, escolherem um prejeto simples, fazer uma modificação e encontrar um mentor pra avaliar as mudanças realizadas no projeto.
 
-Para tanto, o nosso grupo (<strong>grupo 3</strong>), escolheu um <strong>jogo da velha</strong>. Nele o objetivo é colocar 3 símbolos iguais numa mesma linha, coluna ou diagonal. TODO: Colocar mais detalhes finais do projeto..  
+Para tanto, o nosso grupo (<strong>grupo 3</strong>), escolheu um <strong>jogo da velha</strong>. Nele o objetivo é colocar 3 símbolos iguais numa mesma linha, coluna ou diagonal. 
 
 <a id="tecnologias-utilizadas"></a>
 
@@ -58,17 +58,13 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 
 
-## :computer: Resultado Web Responsivo
+## :computer: Resultado Web
 
-- O site está disponível: **[Jogo da Velha](https://www.google.com.br)**
+- O site está disponível: **[Jogo da Velha](https://spacesquad-jogodavelha.netlify.app/)**
 
- TODO: Alterar gif e link jogo da velha quando o projeto estiver pronto!
-<h1 align="center">
-	<img src="https://blog.trakto.io/wp-content/uploads/2017/11/studio.gif" alt="Apresentacao web" />
-</h1>
 
 <h1 align="center">
-	<img src="https://jonmgomes.com/wp-content/uploads/2020/01/1080_x_1080_Arrow_Swipe_GIF_1.gif" alt="Apresentacao Mobile" />
+	<img src="https://firebasestorage.googleapis.com/v0/b/resume-7d906.appspot.com/o/ezgif.com-gif-maker.gif?alt=media&token=b6361fa4-501b-4747-9a47-d3427c9aa8cd" alt="Apresentacao web" />
 </h1>
 
 <a id="como-usar"></a>
