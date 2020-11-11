@@ -7,6 +7,8 @@
 
 body {
   height: 100vh;
+  height: 100%;
+  padding: 30px 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -14,6 +16,44 @@ body {
   background-color: black;
   color: white;
   font-family: 'Press Start 2P', cursive;
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* TABELA PLACAR DO JODO */
+table, tr, td {
+  border: solid 2px;
+  border-spacing: 0.2rem;
+}
+
+table.placar {
+  width: 100%;
+  max-width: 24rem;
+  margin: 1rem auto 2rem;
+  border-color: #000;
+}
+
+table.placar .header {
+  text-align: center;
+  height: 3rem;
+}
+
+table.placar .header td:first-child {
+  background: #5073b8;
+}
+
+table.placar .header td {
+  background:  #ef4e7b;
+}
+
+table.placar tr td {
+  padding: 0.3rem;
+}
+
+table.placar tr td + td {
+  text-align: center;
 }
 
 /* Css separado para nao colocar o font-size para todo o body */
@@ -120,6 +160,7 @@ button.btn-primary:hover {
 
 #resultado {
   top: 64px;
+  padding-top: 40px;
   position: absolute;
 }
 
@@ -139,7 +180,9 @@ button.btn-primary:hover {
 #restartGame {
   width: 100%;
   height: 100%;
+  height: 100vh;
   display: flex;
+  flex: 1;
   position: absolute;
   align-items: center;
   justify-content: center;
@@ -166,12 +209,3 @@ button.btn-primary:hover {
   }
 }
 
-table, tr, td {
-  border: solid 1px;
-}
-
-table.placar {
-  width: 100%;
-  max-width: 24rem;
-  margin: 1rem auto 2rem;
-}
