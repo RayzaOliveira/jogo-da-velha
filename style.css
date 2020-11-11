@@ -1,15 +1,116 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:200');
-body {
+* {
   margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
   height: 100vh;
+  height: 100%;
+  padding: 30px 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   background-color: black;
   color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* TABELA PLACAR DO JODO */
+table, tr, td {
+  border: solid 2px;
+  border-spacing: 0.2rem;
+}
+
+table.placar {
+  width: 100%;
+  max-width: 24rem;
+  margin: 1rem auto 2rem;
+  border-color: #000;
+}
+
+table.placar .header {
+  text-align: center;
+  height: 3rem;
+}
+
+table.placar .header td:first-child {
+  background: #5073b8;
+}
+
+table.placar .header td {
+  background:  #ef4e7b;
+}
+
+table.placar tr td {
+  padding: 0.3rem;
+}
+
+table.placar tr td + td {
+  text-align: center;
+}
+
+/* Css separado para nao colocar o font-size para todo o body */
+.text-large {
   font-size: 2.5rem;
-  font-family: 'Raleway';
+}
+
+#nomeJogadores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+#nomeJogadores > div {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nomeJogadores > div > label {
+  font-size: 1.5rem;
+}
+
+#nomeJogadores > div > input {
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  max-width: 18rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+button.btn-primary {
+  width: 100%;
+  max-width: 14rem;
+  padding: .75rem 2rem;
+  font-size: 1rem;
+  color: #FFF;
+  border: solid 2px #FFF;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 1rem;
+}
+
+button.btn-primary:hover {
+  background-color: #FFF;
+  color: #222;
+}
+
+#nomeJogadores > button {
+  margin-top: 0.5rem;
 }
 
 #jogo {
@@ -35,11 +136,6 @@ body {
 .linha {
   height: 150px;
   display: flex;
-  border-bottom: 2px dashed;
-}
-
-.linha:last-child {
-  border-bottom: none;
 }
 
 .casa {
@@ -51,21 +147,25 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   border-right: 2px dashed whitesmoke;
+  border-bottom: 2px dashed whitesmoke;
 }
 
 .casa:last-child {
   border-right: none;
 }
 
+.linha:last-child .casa {
+  border-bottom: none;
+}
+
 #resultado {
   top: 64px;
+  padding-top: 40px;
   position: absolute;
 }
 
 .currentPlayer {
-  bottom: 32px;
   display: flex;
-  position: absolute;
   align-items: center;
 }
 
@@ -80,11 +180,13 @@ body {
 #restartGame {
   width: 100%;
   height: 100%;
+  height: 100vh;
   display: flex;
+  flex: 1;
   position: absolute;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
 }
 
 #restartGame img {
@@ -106,3 +208,4 @@ body {
     background-position: 0% 50%;
   }
 }
+
