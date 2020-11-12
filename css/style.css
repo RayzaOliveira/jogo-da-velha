@@ -18,68 +18,66 @@ body {
   font-family: 'Press Start 2P', cursive;
 }
 
-button {
-  font-family: 'Press Start 2P', cursive;
-}
-
-/* TABELA PLACAR DO JODO */
+/*=== TABELA PLACAR DO JOGO ===*/
 table, tr, td {
   border: solid 2px;
   border-spacing: 0.2rem;
 }
 
-table.placar {
+table.score {
   width: 100%;
   max-width: 24rem;
   margin: 1rem auto 2rem;
   border-color: #000;
 }
 
-table.placar .header {
+table.score .header {
   text-align: center;
   height: 3rem;
 }
 
-table.placar .header td:first-child {
+table.score .header td:first-child {
   background: #5073b8;
 }
 
-table.placar .header td {
+table.score .header td {
   background:  #ef4e7b;
 }
 
-table.placar tr td {
+table.score tr td {
   padding: 0.3rem;
 }
 
-table.placar tr td + td {
+table.score tr td + td {
   text-align: center;
 }
 
-/* Css separado para nao colocar o font-size para todo o body */
+/*=== ESTILO PARA NÃO APLICAR O FONT-SIZE EM TODO O BODY ===*/
 .text-large {
   font-size: 2.5rem;
 }
 
-#nomeJogadores {
+#playersName {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 1rem 0;
 }
 
-#nomeJogadores > div {
+#playersName > div {
   display: flex;
   margin-top: 1rem;
   flex-direction: column;
   align-items: center;
 }
 
-#nomeJogadores > div > label {
+
+
+#playersName > div > label {
   font-size: 1.5rem;
 }
 
-#nomeJogadores > div > input {
+#playersName > div > input {
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
   width: 100%;
@@ -89,6 +87,14 @@ table.placar tr td + td {
   border: 2px solid white;
   background-color: transparent;
   color: white;
+}
+
+#playersName > button {
+  margin-top: 0.5rem;
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
 }
 
 button.btn-primary {
@@ -109,17 +115,13 @@ button.btn-primary:hover {
   color: #222;
 }
 
-#nomeJogadores > button {
-  margin-top: 0.5rem;
-}
-
-#jogo {
+#game {
   --borderWidth: 3px;
   position: relative;
   border-radius: 3px;
 }
 
-#jogo::after {
+#game::after {
   content: '';
   position: absolute;
   top: calc(-1 * var(--borderWidth));
@@ -133,12 +135,16 @@ button.btn-primary:hover {
   background-size: 300% 300%;
 }
 
-.linha {
+.row {
   height: 150px;
   display: flex;
 }
 
-.casa {
+.row:last-child .item {
+  border-bottom: none;
+}
+
+.table-item {
   width: 150px;
   cursor: pointer;
   position: relative;
@@ -150,15 +156,11 @@ button.btn-primary:hover {
   border-bottom: 2px dashed whitesmoke;
 }
 
-.casa:last-child {
+.table-item:last-child {
   border-right: none;
 }
 
-.linha:last-child .casa {
-  border-bottom: none;
-}
-
-#resultado {
+#result {
   top: 64px;
   padding-top: 40px;
   position: absolute;
@@ -197,6 +199,51 @@ button.btn-primary:hover {
   display: none !important;
 }
 
+.desactive {
+  display: none;
+}
+
+
+/*=== MODAL OVERLAY ===*/
+#modal-overlay {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 100%;
+  height: max-content;
+  position: absolute;
+  top: 0;
+}
+
+#modal {
+  background-color: rgba(255, 255, 255,0.95);
+  width: 30vw;
+  height: 40vh;
+  border-radius: 8px;
+  margin: 30vh auto;
+  text-align: center;
+  padding: 32px;
+  color:  #5073b8;
+  position: relative;
+}
+
+#modal p {
+  font-size: 28px;
+  line-height: 38px;
+}
+
+#modal .close-button {
+  padding: 16px;
+  background-color: #ef4e7b;
+  color: #fff;
+  border-radius: 8px;
+  margin: 20% auto;
+  cursor: pointer;
+}
+
+#modal-overlay.active {
+  visibility: visible;
+}
+
 @keyframes animatedGradient {
   0% {
     background-position: 0% 50%;
@@ -209,3 +256,55 @@ button.btn-primary:hover {
   }
 }
 
+/*=== MELHORANDO A RESPONSIVIDADE ===*/
+
+
+@media (max-width: 800px) 
+{
+  #game {
+    max-width: 95%;
+  }
+
+  .row {
+    height: 14vh;
+  }
+
+  #modal {
+    width: 70vw;
+    height: 40vh;
+  }
+
+  #modal p {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  #modal .close-button {
+    margin: 10% auto;
+  }
+}
+
+@media (max-width: 600px) 
+{
+  #game {
+    width: 95%;
+  }
+
+  .row {
+    height: 14vh;
+  }
+
+  #modal {
+    width: 70vw;
+    height: 40vh;
+  }
+
+  #modal p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  #modal .close-button {
+    margin: 10% auto;
+  }
+}
