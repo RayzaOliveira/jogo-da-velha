@@ -5,73 +5,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jogo da Velha</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <h3>PLACAR</h3>
-  <table class="placar">
+  <table class="score">
     <tr class="header">
       <td>Jogador</td>
       <td>Pontos</td>
     </tr>
     <tr id="1">
-      <td class="nome"></td>
-      <td class="pontos">0</td>
+      <td class="name"></td>
+      <td class="points">0</td>
     </tr>
     <tr id="2">
-      <td class="nome"></td>
-      <td class="pontos">0</td>
+      <td class="name"></td>
+      <td class="points">0</td>
     </tr>
   </table>
 
-  <div id="jogo">
-    <div class="linha">
-      <div class="casa" id="casa1"></div>
-      <div class="casa" id="casa2"></div>
-      <div class="casa" id="casa3"></div>
+  <div id="game">
+    <div class="row">
+      <div class="table-item" id="table-item1"></div>
+      <div class="table-item" id="table-item2"></div>
+      <div class="table-item" id="table-item3"></div>
     </div>
-    <div class="linha">
-      <div class="casa" id="casa4"></div>
-      <div class="casa" id="casa5"></div>
-      <div class="casa" id="casa6"></div>
+    <div class="row">
+      <div class="table-item" id="table-item4"></div>
+      <div class="table-item" id="table-item5"></div>
+      <div class="table-item" id="table-item6"></div>
     </div>
-    <div class="linha">
-      <div class="casa" id="casa7"></div>
-      <div class="casa" id="casa8"></div>
-      <div class="casa" id="casa9"></div>
+    <div class="row">
+      <div class="table-item" id="table-item7"></div>
+      <div class="table-item" id="table-item8"></div>
+      <div class="table-item" id="table-item9"></div>
     </div>
   </div>
 
-  <div id="nomeJogadores">
+  <div id="playersName">
     <div>
       <label>Jogador 1</label>
-      <input type="text" id="jogador-1" />
+      <input type="text" id="player-1" />
     </div>
 
     <div>
       <label>Jogador 2</label>
-      <input type="text" id="jogador-2" />
+      <input type="text" id="player-2" />
     </div>
 
-    <button class="btn-primary" onclick="iniciarJogo()" type="button">Iniciar</button>
+    <button class="btn-primary" onclick="startGame()" type="button">Iniciar</button>
   </div>
 
-  <button id="trocar-jogadores" onclick="trocarJogadores()" class="btn-primary d-none">
+  <button id="change-players" onclick="changePlayers()" class="btn-primary d-none">
     Trocar jogadores
   </button>
 
   <div class="currentPlayer text-large d-none">
     Vez do jogador <div id="currentPlayerImg"></div>
-    <span id="nomeJogadorAtual"></span>
+    <span id="currentPlayerName"></span>
   </div>
 
   <div id="restartGame" class="d-none">
-    <div id="resultado" class="text-large"></div>
-    <img src="assets/restart.png" alt="restartGame" onclick="reiniciarJogo()">
+    <div id="result" class="text-large"></div>
+    <img src="./assets/restart.png" alt="restartGame" onclick="restartGame()">
   </div>
-  <script src="./index.js"></script>
+
+  <div id="modal-overlay">
+    <div id="modal">    
+        <p>Insira o nome dos jogadores para iniciar!</p>
+        <div class="close-button">Beleza!</div>
+    </div>
+  </div>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>
