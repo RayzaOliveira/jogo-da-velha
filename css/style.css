@@ -232,7 +232,6 @@ button.btn-primary:hover {
 }
 
 #modal .close-button {
-  width: 200px;
   padding: 16px;
   background-color: #ef4e7b;
   color: #fff;
@@ -258,16 +257,7 @@ button.btn-primary:hover {
 }
 
 /*=== MELHORANDO A RESPONSIVIDADE ===*/
-@media (max-width: 600px) 
-{
-  #game {
-    width: 95%;
-  }
 
-  .row {
-    height: 14vh;
-  }
-}
 
 @media (max-width: 800px) 
 {
@@ -277,5 +267,44 @@ button.btn-primary:hover {
 
   .row {
     height: 14vh;
+  }
+
+  #modal {
+    width: 70vw;
+    height: 40vh;
+  }
+
+  #modal p {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  #modal .close-button {
+    margin: 10% auto;
+  }
+}
+
+@media (max-width: 600px) 
+{
+  #game {
+    width: 95%;
+  }
+
+  .row {
+    height: 14vh;
+  }
+
+  #modal {
+    width: 70vw;
+    height: 40vh;
+  }
+
+  #modal p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  #modal .close-button {
+    margin: 10% auto;
   }
 }
